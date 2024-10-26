@@ -735,7 +735,7 @@ version: '2.2'
 
 services:
   fizz:
-    image: spheronnetwork/fizz:latest
+    image: spheronnetwork/fizz:v1.1.0
     network_mode: "host"
     privileged: true
     cpus: 1
@@ -769,11 +769,11 @@ services:
 EOF
 
 # Check if the Docker image exists and remove it if present
-if docker image inspect spheronnetwork/fizz:latest >/dev/null 2>&1; then
+if docker image inspect spheronnetwork/fizz:v1.1.0 >/dev/null 2>&1; then
     echo "Removing existing Docker image..."
-    docker rmi -f spheronnetwork/fizz:latest
+    docker rmi -f spheronnetwork/fizz:v1.1.0
 else
-    echo "Docker image 'spheronnetwork/fizz:latest' not found. Skipping removal."
+    echo "Docker image 'spheronnetwork/fizz:v1.1.0' not found. Skipping removal."
 fi
 
 if ! docker info >/dev/null 2>&1; then
